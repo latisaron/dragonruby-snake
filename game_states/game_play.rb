@@ -12,6 +12,7 @@ class GamePlay
       inversespeed = [7 - (args.state.points / 10).to_i, 3].max
       if args.state._movement_ticks % inversespeed == 0
         args.state.snake.move_player(args.state.direction)
+        args.state.moved_after_direction_change = true
       end
 
       if args.state.apple.nil?
@@ -52,16 +53,22 @@ class GamePlay
         args.state.generic_game_state.game_state = :pause
       end
 
-      if args.inputs.keyboard.key_down.up
-        args.state.direction = 0 if args.state.direction != 2
-      elsif args.inputs.keyboard.key_down.down
-        args.state.direction = 2 if args.state.direction != 0
-      end
+      if args.state.moved_after_direction_change 
+        if args.inputs.keyboard.key_down.up
+          args.state.direction = 0 if args.state.direction != 2
+          args.state.moved_after_direction_change = false
+        elsif args.inputs.keyboard.key_down.down
+          args.state.direction = 2 if args.state.direction != 0
+          args.state.moved_after_direction_change = false
+        end
 
-      if args.inputs.keyboard.key_down.left
-        args.state.direction = 3 if args.state.direction != 1
-      elsif args.inputs.keyboard.key_down.right
-        args.state.direction = 1 if args.state.direction != 3
+        if args.inputs.keyboard.key_down.left
+          args.state.direction = 3 if args.state.direction != 1
+          args.state.moved_after_direction_change = false
+        elsif args.inputs.keyboard.key_down.right
+          args.state.direction = 1 if args.state.direction != 3
+          args.state.moved_after_direction_change = false
+        end
       end
     end
   end

@@ -7,5 +7,6 @@ class MiscellaneousManager
     @_args.state._movement_ticks = 1
     @_args.state.points = 0
     @_args.state.direction = 0
+    @_args.state.moved_after_direction_change = false
   end
 end
