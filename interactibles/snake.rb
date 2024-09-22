@@ -31,7 +31,7 @@ class Snake
     @options[-1]
   end
 
-  def collide_with_wall
+  def collide_with_wall(args)
     args.state.generic_game_state.game_state = :game_over
   end
 
@@ -41,7 +41,7 @@ class Snake
     args.state.environment_builder.build_apple
   end
 
-  def collide_with_self
+  def collide_with_self(args)
     args.state.generic_game_state.game_state = :game_over
   end
 

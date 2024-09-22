@@ -25,8 +25,8 @@ class GamePlay
 
       args.state._movement_ticks = args.state._movement_ticks % 60 + 1
 
-      args.state.snake.collide_with_self if args.state.collision_manager.ouroboros?
-      args.state.snake.collide_with_wall if args.state.collision_manager.snake_wall_collision?
+      args.state.snake.collide_with_self(args) if args.state.collision_manager.ouroboros?
+      args.state.snake.collide_with_wall(args) if args.state.collision_manager.snake_wall_collision?
     end
 
     def render(args)
