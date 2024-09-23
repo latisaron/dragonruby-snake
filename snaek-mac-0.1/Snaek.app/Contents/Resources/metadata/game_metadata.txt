@@ -1,0 +1,5 @@
+devid=sitalnora
+devtitle=Aron
+gameid=snaek
+gametitle=Snaek
+version=0.1
