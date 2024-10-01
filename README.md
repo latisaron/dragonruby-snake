@@ -1,3 +1,7 @@
+To play the game on MacOS, you should run `snaek-mac-0.1/Snaek.app/Contents/MacOS/snaek`
+
+To play the game on Linux you should run `snaek-linux-amd64.bin`
+
 When opening, you're prompted with a menu screen that's self explanatory
 
 ![image](https://github.com/user-attachments/assets/e51836ca-78a5-43e5-bfe0-204c2e27f494)
